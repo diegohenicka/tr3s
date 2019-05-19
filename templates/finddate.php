@@ -25,19 +25,24 @@
                     <div class="newdate__title">
                         Selecione a modalidade de transporte:
                         </div>
-                    <div class="select__category" style=" max-width: 257px;">
-                        <div data-code="1" class="category__item" style="width: 21%;">
+<!--                    <div class="select__category" style=" max-width: 257px;">-->
+                    <div class="select__category">
+<!--                        <div data-code="1" class="category__item" style="width: 21%;">-->
+                        <div data-code="1" class="category__item">
                             <a href="/uber/-30,0588/-51,1664/price"><img src="img/bus-side-view (2).png" alt=""></a>
                         </div>
-                        <div data-code="2" class="category__item" style="width: 21%;">
+<!--                        <div data-code="2" class="category__item" style="width: 21%;">-->
+                        <div data-code="2" class="category__item">
                             <a href="/uber/-30,0588/-51,1664/price"><img src="img/bicycle (1).png" alt=""></a>
                         </div>
 <!--                    </div>-->
 <!--                    <div class="select__category" style="max-width: 257px;">-->
-                        <div data-code="3" class="category__item" style="width: 21%;">
+<!--                        <div data-code="3" class="category__item" style="width: 21%;">-->
+                        <div data-code="3" class="category__item">
                             <a href="/uber/-30,0588/-51,1664/price"><img src="img/car (2).png" alt=""></a>
                         </div>
-                        <div data-code="4" class="category__item" style="width: 21%;">
+<!--                        <div data-code="4" class="category__item" style="width: 21%;">-->
+                        <div data-code="4" class="category__item">
                             <a href="/uber/-30,0588/-51,1664/price"><img src="img/boat@2x.png" alt=""></a>
                         </div>
                     </div>
