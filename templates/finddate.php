@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Me Separei</title>
+    <title>Maria</title>
     <link rel="stylesheet" href="css/newdate.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -25,21 +25,22 @@
                     <div class="newdate__title">
                         Selecione a modalidade de transporte:
                         </div>
-                    <div class="select__category">
-                        <div data-code="1" class="category__item">
-                            <img src="img/bus-side-view.png" alt="">
+                    <div class="select__category" style=" max-width: 257px;">
+                        <div data-code="1" class="category__item" style="width: 21%;">
+                            <a href="/uber/-30,0588/-51,1664/price"><img src="img/bus-side-view (2).png" alt=""></a>
                         </div>
-                        <div data-code="2" class="category__item">
-                            <img src="img/car (1).png" alt="">
+                        <div data-code="2" class="category__item" style="width: 21%;">
+                            <a href="/uber/-30,0588/-51,1664/price"><img src="img/bicycle (1).png" alt=""></a>
                         </div>
-                        <div data-code="3" class="category__item">
-                            <img src="img/bicycle.png" alt="">
+<!--                    </div>-->
+<!--                    <div class="select__category" style="max-width: 257px;">-->
+                        <div data-code="3" class="category__item" style="width: 21%;">
+                            <a href="/uber/-30,0588/-51,1664/price"><img src="img/car (2).png" alt=""></a>
                         </div>
-                        <div data-code="4" class="category__item">
-                            <img src="img/running.png" alt="">
+                        <div data-code="4" class="category__item" style="width: 21%;">
+                            <a href="/uber/-30,0588/-51,1664/price"><img src="img/boat@2x.png" alt=""></a>
                         </div>
                     </div>
-                    <button disabled id="second__slide_btn" onclick="nextSlide()" class="btn">Continuar</button>
                 </div>
         </div>
     </div>
@@ -54,7 +55,7 @@ $(document).ready(function () {
             options += '<option value="' + val.nome + '">' + val.nome + '</option>';
         });					
         $("#estados").html(options);				
-        
+
         $("#estados").change(function () {				
         
             var options_cidades = '';
