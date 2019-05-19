@@ -42,6 +42,12 @@ return function (App $app) {
     })->add($auth);
 
 
+    $app->get('/match', function (Request $request, Response $response, array $args) {
+        return $this->renderer->render($response, 'match.phtml', $args);
+    })->add($auth);
+
+
+
     $app->get('/uber/{lat}/{long}[/{tipo}]', function (Request $request, Response $response, array $args) {
         $url      = "http://localhost:8181/uber/";
         $ClientID = "rFgw8cBkS7N-5gkE3Op6QoaV6bpnx55q";
@@ -119,7 +125,7 @@ return function (App $app) {
                     //'payment_method_id' => 'a1111c8c-c720-46c3-8534-2fcd'   // Optional
                 ));
                 $dados = [produtos => $ride];
-                var_dump($dados);
+                //var_dump($dados);
             }
             //var_dump($dados);
             $_SESSION['tipo'] = "";
@@ -213,7 +219,7 @@ return function (App $app) {
 
             if ($user->count()) {
               $_SESSION['user'] = (array)$user->first();
-              return $response->withStatus(302)->withHeader('Location', '/selectModal');
+              return $response->withStatus(302)->withHeader('Location', '/localizacao');
             }
           }
 

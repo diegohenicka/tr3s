@@ -20,12 +20,12 @@
 }
 .btn {
     font-family: 'Roboto', sans-serif;
-    font-size: 22px;
+    font-size: 15px;
     font-weight: 200;
     padding: 10px 28px;
     border-radius: 50px;
     border: none;
-    background-image: linear-gradient(-246.79deg, #01060A 0%, #ccc 100%);
+    
     margin: 0 15px;
     cursor: pointer;
     transition: opacity .2s;
@@ -46,7 +46,7 @@
 
         <?php 
             for($i = 0; $i < count($produtos->prices); ++$i) {
-                echo "<button class='btn' href='/final' style='margin-left:20px;'><b>".$produtos->prices[$i]->display_name."</b> - Valor: ".$produtos->prices[$i]->estimate."</button>";
+                echo "<a style='background-color: #fe199d !important; font-size:15px;'class='btn' href='/final' style='margin-left:20px;'><b>".$produtos->prices[$i]->display_name."</b> - Valor: ".$produtos->prices[$i]->estimate."</a>";
             } 
         ?>
       <script src="/js/profile.js"></script>

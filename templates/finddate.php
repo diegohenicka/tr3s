@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-    <link rel="stylesheet" href="js/picker/classic.css">
-    <link rel="stylesheet" href="js/picker/classic.date.css">
-    <link rel="stylesheet" href="js/picker/classic.time.css">
-    <link rel="stylesheet" href="js/picker/timepicker.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="sidemenu/sidemenu.css">
+    <link rel="stylesheet" href="/js/picker/classic.css">
+    <link rel="stylesheet" href="/js/picker/classic.date.css">
+    <link rel="stylesheet" href="/js/picker/classic.time.css">
+    <link rel="stylesheet" href="/js/picker/timepicker.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/sidemenu/sidemenu.css">
 </head>
 <body>
 <?php include 'menulat.phtml'; ?>
@@ -49,7 +49,7 @@
                 </div>
         </div>
     </div>
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
 $(document).ready(function () {
@@ -87,8 +87,7 @@ $(document).ready(function () {
 });
     </script>
 
-    <script src="js/finddate.js"></script>
-    <script src="js/sidemenu/sidemenu.js"></script>
-    <script src="js/select.js"></script>
+    <script src="/sidemenu/sidemenu.js"></script>
+    <script src="/js/select.js"></script>
 </body>
 </html>
