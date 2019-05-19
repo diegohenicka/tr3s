@@ -19,10 +19,10 @@ return [
         //MySql
         'db' => [
             'driver' => 'mysql',
-            'hotst' => 'localhost',
+            'host' => 'localhost',
             'database' => 'mesepare_teste',
             'username' => 'root',
-            'password' => 'root',
+            'password' => 'senha123',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => ''
