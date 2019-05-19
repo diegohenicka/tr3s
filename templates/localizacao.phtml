@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/css/dateinfos.css">
     <link rel="stylesheet" href="/css/header.css">
   
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/slick.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,900" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/sidemenu/sidemenu.js"></script>
@@ -19,7 +19,8 @@
 <body>
 <?php include 'menulat.phtml'; ?>
 <?php include 'header.phtml'; ?>
-    <form action="selectModal" id="cadastro-form" class="modal__form">                
+    <h4>Informe seu trajeto</h4>
+    <form action="selectModal" id="trajeto" class="modal__form">                
       <input name="nome" type="text" placeholder="Ponto A" class="modal__input">    
       <input name="user" type="text" placeholder="Ponto B" class="modal__input">      
       <input style="width:100%;"class="modal__submit" type="submit" value="Buscar">

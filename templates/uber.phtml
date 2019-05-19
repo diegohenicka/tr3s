@@ -14,21 +14,39 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/sidemenu/sidemenu.js"></script>
     <link rel="stylesheet" href="/sidemenu/sidemenu.css">
+    <style>
+    .buttons {
+    margin-top: 100px;
+}
+.btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+    padding: 10px 28px;
+    border-radius: 50px;
+    border: none;
+    background-image: linear-gradient(-246.79deg, #01060A 0%, #ccc 100%);
+    margin: 0 15px;
+    cursor: pointer;
+    transition: opacity .2s;
+    text-decoration: none;
+
+    margin-top: 20px;
+
+}
+.btn:hover {
+    opacity: .7;
+}
+    </style>
 </head>
 <body>
 <body>
 <?php include 'menulat.phtml'; ?>
 <?php include 'header.phtml'; ?>
-<div id="both" class="gender">
-                        <img src="./img/both.png" alt="">
-                        <span class="gender__label">
-                            Ambos
-                        </span>
-                    </div>
+
         <?php 
             for($i = 0; $i < count($produtos->prices); ++$i) {
-                echo "<h4>".$produtos->prices[$i]->display_name."</h4>";
-                echo "Valor: ".$produtos->prices[$i]->estimate."";
+                echo "<button class='btn' href='#' style='margin-left:20px;'><b>".$produtos->prices[$i]->display_name."</b> - Valor: ".$produtos->prices[$i]->estimate."</button>";
             } 
         ?>
       <script src="/js/profile.js"></script>
