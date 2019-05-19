@@ -28,6 +28,9 @@ return function (App $app) {
         return $this->renderer->render($response, 'index.phtml', $args);
     })/*->add($auth)*/;
 
+    $app->get('/home', function (Request $request, Response $response, array $args) {
+        return $this->renderer->render($response, 'home.phtml', $args);
+    });
 
     $app->post('/cadastro', function (Request $request, Response $response, array $args) {
         $data = [
