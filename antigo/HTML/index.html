@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Me Separei</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,900" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="modal__out" id="login-modal">
+        <div class="modal__box">
+            <div class="modal__close" id="close-login-modal">
+                <img src="./img/close.png" alt="">
+            </div>
+            <img src="./img/heart.png" alt="" class="modal__icon">
+            <div class="modal__title">
+                Vamos Começar
+            </div>
+            <div class="modal__subtitle">
+                Ao clicar em entrar você concorda com os Termos. <br> Política de Privacidade e Política de Cookies
+            </div>
+            <form method="POST" action="verifica.php" class="modal__form">
+                <input name="username" type="text" placeholder="Usuário" class="modal__input">
+                <input name="password" type="password" placeholder="Senha" class="modal__input">
+                <input class="modal__submit" type="submit" value="Entrar">
+            </form>
+        </div>
+    </div>
+    <div class="modal__out" id="cadastro-modal">
+        <div class="modal__box">
+            <div class="modal__close" id="close-cadastro-modal">
+                <img src="./img/close.png" alt="">
+            </div>
+            <img src="./img/heart.png" alt="" class="modal__icon">
+            <div class="modal__title">
+                Vamos Começar
+            </div>
+            <div class="modal__subtitle">
+                Ao clicar em entrar você concorda com os Termos. <br> Política de Privacidade e Política de Cookies
+            </div>
+            <form action="cadastro.php" id="cadastro-form" class="modal__form">
+                <input name="user" type="text" placeholder="Usuário" class="modal__input">
+                <input name="email" type="email" placeholder="Email" class="modal__input">
+
+                <input name="pass" type="password" placeholder="Senha" class="modal__input">
+
+                <div class="select__gender">
+                    <span class="gender__title">
+                        Sou:
+                    </span>
+                    <div id="woman" class="gender">
+                        <img src="./img/woman.png"  height="80" width="80" alt="">
+                        <span class="gender__label">
+                            Mulher
+                        </span>
+                    </div>
+
+                    <div id="man" class="gender">
+                        <img src="./img/man.png" height="80" width="80" alt="">
+                        <span class="gender__label">
+                            Homem
+                        </span>
+                    </div>
+                </div>
+                <input class="modal__submit" type="submit" value="Entrar">
+            </form>
+        </div>
+    </div>
+    <div class="first__section">
+        <header class="header">
+            <img class="logo" src="./img/heart.png" alt="Me Separei">
+            <button id="login" class="btn small">
+                Login
+            </button>
+        </header>
+        <div class="box">
+
+            <h1 class="title">
+                Clean.Slick.Pixel Perfect
+            </h1>
+            <h2 class="subtitle">
+                lldy is a great one-page theme, perfect for developers and designers but also for someone who just wants a new website for his business. Try it now!
+            </h2>
+        </div>
+        <div class="buttons">
+            <button class="btn">
+                Buscar Encontros
+            </button>
+            <button id="cadastro" class="btn primary">
+                Cadastre-se
+            </button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    
+</body>
+</html>

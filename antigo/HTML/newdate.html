@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Me Separei</title>
+    <link rel="stylesheet" href="css/newdate.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <link rel="stylesheet" href="./picker/classic.css">
+    <link rel="stylesheet" href="./picker/classic.date.css">
+    <link rel="stylesheet" href="./picker/classic.time.css">
+    <link rel="stylesheet" href="./picker/timepicker.css">
+
+    <link rel="stylesheet" href="sidemenu/sidemenu.css">
+</head>
+<body>
+    <div id="sidemenu">
+        <div class="menu__top">
+            <div id="close-menu" class="menu__close">
+                <img src="img/close.png" alt="">
+            </div>
+            <div class="menu__title">
+                MENU
+            </div>
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="">
+                        HOME
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="">
+                        Buscar Encontros
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="">
+                        Buscar Encontros
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="">
+                        Editar Perfil
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menu__bottom">
+            <div onclick="logout()" class="menu__logout">
+                Logout
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <img class="logo" src="./img/logo.png" height="50px" width="50px" alt="">
+    
+            <img class="hamburguer" id="hamburguer" src="./img/menu.png" alt="">
+        </div>
+    </header>
+
+    <div id="newdate-slider">
+        <div class="newdate__slide first__step">
+            <div class="slide__content">
+                <div class="newdate__title">
+                    Buscar encontro com:
+                </div>
+                <div class="select__gender">
+                    <div id="man" class="gender">
+                        <img src="./img/man.png" alt="">
+                        <span class="gender__label">
+                            Homem
+                        </span>
+                    </div>
+                    
+                    <div id="woman" class="gender">
+                        <img src="./img/woman.png"  alt="">
+                        <span class="gender__label">
+                            Mulher
+                        </span>
+                    </div>
+
+                    <div id="both" class="gender">
+                        <img src="./img/both.png" alt="">
+                        <span class="gender__label">
+                            Ambos
+                        </span>
+                    </div>
+                </div>
+                <button onclick="nextSlide()" class="btn">Continuar</button>
+            </div>
+        </div>
+
+        <div class="newdate__slide second__step">
+                <div class="slide__content">
+                    <div class="newdate__title">
+                        Que tipo:
+                    </div>
+                    <div class="select__category">
+                        <div data-code="1" class="category__item">
+                            <img src="img/travel.png" alt="">
+                        </div>
+                        <div data-code="2" class="category__item">
+                            <img src="img/dinner.png" alt="">
+                        </div>
+                        <div data-code="3" class="category__item">
+                            <img src="img/dinner.png" alt="">
+                        </div>
+                        <div data-code="4" class="category__item">
+                            <img src="img/travel.png" alt="">
+                        </div>
+                        <div data-code="5" class="category__item">
+                            <img src="img/dinner.png" alt="">
+                        </div>
+                        <div data-code="6" class="category__item">
+                            <img src="img/dinner.png" alt="">
+                        </div>
+                    </div>
+                    <button onclick="nextSlide()" class="btn">Continuar</button>
+                </div>
+        </div>
+
+        <div class="newdate__slide third__step">
+            <div class="slide__content">
+                <div class="newdate__title">
+                    Que tipo:
+                </div>
+                <div class="newdate__place__select">
+                    <select class="newdate__select" name="state" id="estados">
+    
+                    </select>
+                    <select class="newdate__select" name="city" id="cidades">
+                        <option selected disabled value="">Escolha sua cidade</option>
+                    </select>
+
+                    <select class="newdate__select" name="city" id="places">
+                        <option selected disabled value="">Escolha um lugar</option>
+
+                        <option value="madero">Madero</option>
+                        <option value="cinema">Cinema</option>
+                    </select>
+                </div>
+                <button onclick="nextSlide()" class="btn">Continuar</button>
+
+            </div>
+        </div>
+
+        <div class="newdate__slide fourth__step">
+            <div class="slide__content">
+                <div class="newdate__top">
+                    <div class="newdate__title">
+                        Estou disponível
+                    </div>
+                    <div class="newdate__subtitle">
+                        Selecione as datas que você está disponivel
+                    </div>
+                </div>
+                <div class="newdate__datepicker">
+                    <input type="text" id="datepicker">
+                </div>
+                <button onclick="nextSlide()" class="btn">Continuar</button>
+            </div>
+        </div>
+        <div class="newdate__slide fifth__step">
+            <div class="slide__content">
+                <div class="newdate__top">
+                    <div class="newdate__title">
+                        Estou disponível
+                    </div>
+                    <div class="newdate__subtitle">
+                        Selecione os horários que você está disponivel
+                    </div>
+                </div>
+                <div class="newdate__timepicker">
+                    <input class="timepicker" placeholder="Selecione o horário" type="text" id="timepicker-from">
+                    <div class="till">até</div>
+                    <input class="timepicker" placeholder="Selecione o horário" type="text" id="timepicker-to">
+                </div>
+                <button onclick="nextSlide()" class="btn">Continuar</button>
+            </div>
+        </div>
+        <div class="newdate__slide sixth__step">
+            <div class="slide__content">
+                <div class="newdate__top">
+                    <div class="newdate__title">
+                        Detalhes:
+                    </div>
+                </div>
+                <div class="newdate__textarea__group">
+                    <textarea class="newdate__textarea" placeholder="Conte um pouco sobre você, e o que espera desse encontro..." name="" id="" ></textarea>
+                    <textarea class="newdate__textarea" placeholder="O que busca na pessoa ideal para esse encontro..." name="" id="" ></textarea>
+                </div>
+                <button onclick="finish()" class="btn">Finalizar</button>
+            </div>
+        </div>
+        <div class="newdate__slide last__step">
+            <div class="slide__content">
+                <img src="img/confirmed.png" alt="" class="newdate__confirmed">
+                <div class="newdate__top">
+                    <div class="newdate__title">
+                        Evento criado com sucesso!
+                    </div>
+                </div>
+                <button onclick="nextSlide()" class="btn">Meus Eventos</button>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./picker/shadow.js"></script>
+    <script src="./picker/picker.js"></script>
+    <script src="./picker/picker.date.js"></script>
+
+
+    <script src="./picker/timepicker.js"></script>
+    <script src="newdate.js"></script>
+    <script src="sidemenu/sidemenu.js"></script>
+    <script src="select.js"></script>
+</body>
+</html>

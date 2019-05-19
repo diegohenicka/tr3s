@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Me Separei</title>
+    <link rel="stylesheet" href="css/date.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <link rel="stylesheet" href="sidemenu/sidemenu.css">
+</head>
+<body>
+    <div id="sidemenu">
+        <div class="menu__top">
+            <div id="close-menu" class="menu__close">
+                <img src="img/close.png" alt="">
+            </div>
+            <div class="menu__title">
+                MENU
+            </div>
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="">
+                        HOME
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="">
+                        Buscar Encontros
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="">
+                        Buscar Pessoas
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="">
+                        Editar Perfil
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menu__bottom">
+            <div onclick="logout()" class="menu__logout">
+                Logout
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <img class="logo" src="./img/logo.png" height="50px" width="50px" alt="">
+    
+            <img class="hamburguer" id="hamburguer" src="./img/menu.png" alt="">
+        </div>
+    </header>
+
+    <div class="date__inside">
+        <div class="result__item__header"></div>
+        <div class="result__item__data">
+            <div class="item__photo">
+                <img src="./img/profile.png" alt="">
+            </div>
+            
+            <div class="item__info">
+                Leonardo, 26<br>
+                <span class="city">
+                    Sua cidade, SP
+                </span>
+            </div>
+
+            <div class="item__description">
+                    lldy is a great one-page theme, perfect for developers and designers but also for someone who just wants a new website for his business. Try it now!
+            </div>
+            <div class="item__actions">
+                <div class="actions__icons">
+                    <img src="img/woman.png" alt="">
+                    <img src="img/plateicon.png" alt="">
+                    <img src="img/coin.png" alt="">
+                </div>
+                <button class="btn">Eu quero</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <script src="sidemenu/sidemenu.js"></script>
+</body>
+</html>
