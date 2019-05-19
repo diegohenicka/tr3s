@@ -36,13 +36,15 @@
 <div class="profile__content">
     <div class="profile__data">
         <div class="profile__cover__mobile">
-
             <div class="profile__photo">
-                <img src="./photos/<?php echo $myavatar; ?>" alt="">
+                <?php if (!empty($_SESSION['userAlbum'])) { ;?>
+                        <img src="photos/<?php echo $_SESSION['userAlbum']['name']; ?>" alt="">
+                <?php }?>
+
             </div>
         </div>
-    </div>
-<!--    <form action="add/add_photos.php" id="" class=""  method="post" enctype="multipart/form-data" onchange="submitForm();">-->
+ <!--              </div>
+           <!--    <form action="add/add_photos.php" id="" class=""  method="post" enctype="multipart/form-data" onchange="submitForm();">-->
 <!--        <div class="profile__images">-->
 <!--            --><?php //if (!empty($useralbum['name'])) { ?>
 <!--                --><?php //do { ?>
@@ -64,6 +66,7 @@
 <!--            }-->
 <!--        </script>-->
 <!--    </form>-->
+        
     <div class="profile__text__mobile">
         <?php echo $userdescr; ?>
     </div>

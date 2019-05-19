@@ -38,6 +38,37 @@ return function (App $app) {
 
     $app->post('/edit', function (Request $request, Response $response, array $args) {
 
+        $userid = $_SESSION['user']['id'];
+        $data = [
+            'state'=>filter_input(INPUT_POST, 'state'),
+            'city'=>filter_input(INPUT_POST, 'city'),
+            'descr'=>filter_input(INPUT_POST, 'descr'),
+            'contact'=>filter_input(INPUT_POST, 'contact'),
+            'id' => $userid
+        ];
+
+        $table = $this->db->table('user');
+        $user = $table->update($data);
+
+        $img_file = $_FILES["fileToUpload"]["name"];
+        $target_dir = "photos/";
+        $target_file = $target_dir . basename($img_file);
+        $file_ext = substr($img_file, strripos($img_file, '.')); // This returns file ext
+        $newfilename = mt_rand().round(microtime(true)) . $file_ext;
+        $destino = $target_dir.$newfilename;
+
+        if
+        (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $destino)) {
+            $data = [
+                'userid'=>$userid,
+                'name'=>$newfilename,
+            ];
+
+            $table = $this->db->table('album');
+            $album = $table->insert($data);
+        }
+        $_SESSION['userAlbum'] = $newfilename;
+        return $response->withStatus(302)->withHeader('Location', '/home');
     });
 
     $app->post('/cadastro', function (Request $request, Response $response, array $args) {
@@ -48,30 +79,43 @@ return function (App $app) {
             'pass'=>filter_input(INPUT_POST, 'pass'),
             'gender'=>filter_input(INPUT_POST, 'gender')
           ];        
-        //var_dump($data);
+
         $table = $this->db->table('user');
         $user = $table->insert($data);
-
+        if ($user) {
+            return $response->withStatus(302)->withHeader('Location', '/home');
+        }
         return $response->withStatus(302)->withHeader('Location', '/');
         //return $this->renderer->render($response, 'index.phtml', $args);
     });
 
-
     $app->map(['GET', 'POST'] ,'/login', function(Request $request, Response $response, array $args) {
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $user = filter_input(INPUT_POST, 'user');
             $pass = filter_input(INPUT_POST, 'pass');
 
             $table = $this->db->table('user');
-            $users = $table->where([
+            $user = $table->where([
               'user' => $user,
               'pass' => $pass
             ])->get();
-            if ($users->count()) {
-              $_SESSION['user'] = (array)$users->first();
+
+            $table2 = $this->db->table('album');
+            $useralbum = $table2->where([
+                'userid' => $user->first()->id
+                ])->get();
+
+            if($useralbum->count()) {
+                $_SESSION['userAlbum'] = (array)$useralbum->last();
+            }
+
+            if ($user->count()) {
+              $_SESSION['user'] = (array)$user->first();
               return $response->withStatus(302)->withHeader('Location', '/home');
             }
           }
+
           return $response->withStatus(302)->withHeader('Location', '/');
     });
 };
