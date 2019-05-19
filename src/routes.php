@@ -94,7 +94,7 @@ return function (App $app) {
                 'longitude' => '-51.1829802'
             ));*/
 
-            //if ($_SESSION['tipo'] = 'price'){
+            if ($_SESSION['tipo'] == 'price'){
                 $estimates = $client->getPriceEstimates(array(
                     'start_latitude' => '-30.0661275',
                     'start_longitude' => '-51.1829802',
@@ -102,9 +102,9 @@ return function (App $app) {
                     'end_longitude' => $_SESSION['long']
                 ));
                 $dados = [produtos => $estimates];
-            //}
-            /*if ($_SESSION['tipo'] = 'ride'){
-                $ride = $client->requestRide(array(
+            }
+            if ($_SESSION['tipo'] == 'ride'){
+                /*$ride = $client->requestRide(array(
                     'start_latitude' => '41.85582993',
                     'start_longitude' => '-87.62730337',
                     'end_latitude' => '41.87499492',
@@ -113,9 +113,11 @@ return function (App $app) {
                     'surge_confirmation_id' => 'e100a670',                  // Optional
                     'payment_method_id' => 'a1111c8c-c720-46c3-8534-2fcd'   // Optional
                 ));
-                $dados = [produtos => $ride];
-            }*/
+                $dados = [produtos => $ride];*/
+                var_dump("teste");
+            }
             //var_dump($dados);
+            $_SESSION['tipo'] = "";
             return $this->renderer->render($response, 'uber.phtml', $dados);
         }
 
