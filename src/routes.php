@@ -37,10 +37,13 @@ return function (App $app) {
     })->add($auth);
 
 
-    $app->get('/uber', function (Request $request, Response $response, array $args) {
+    $app->get('/uber/{lat}/{long}[/{tipo}]', function (Request $request, Response $response, array $args) {
         $url      = "http://localhost:8181/uber/";
         $ClientID = "rFgw8cBkS7N-5gkE3Op6QoaV6bpnx55q";
         $redirecionamento = 'https://login.uber.com/oauth/v2/authorize?response_type=code&client_id='.$ClientID.'&scope=all_trips+delivery+history+history_lite+places+profile+request+request_receipt+ride_widgets&redirect_uri='.$url;
+        $_SESSION['lat'] = str_replace(',','.',$args['lat']);
+        $_SESSION['long'] = str_replace(',','.',$args['long']);
+        $_SESSION['tipo'] = str_replace(',','.',$args['tipo']);
         //return $this->renderer->render($response, 'uber.phtml', $args);
         return $response->withStatus(302)->withHeader('Location', $redirecionamento);
         //var_dump($redirecionamento);
@@ -86,11 +89,32 @@ return function (App $app) {
                 'version'      => 'v1.2' 
             ));
 
-            $products = $client->getProducts(array(
+            /*$products = $client->getProducts(array(
                 'latitude' => '-30.0661275',
                 'longitude' => '-51.1829802'
-            ));
-            $dados = [produtos => $products];
+            ));*/
+
+            //if ($_SESSION['tipo'] = 'price'){
+                $estimates = $client->getPriceEstimates(array(
+                    'start_latitude' => '-30.0661275',
+                    'start_longitude' => '-51.1829802',
+                    'end_latitude' => $_SESSION['lat'],
+                    'end_longitude' => $_SESSION['long']
+                ));
+                $dados = [produtos => $estimates];
+            //}
+            /*if ($_SESSION['tipo'] = 'ride'){
+                $ride = $client->requestRide(array(
+                    'start_latitude' => '41.85582993',
+                    'start_longitude' => '-87.62730337',
+                    'end_latitude' => '41.87499492',
+                    'end_longitude' => '-87.67126465',
+                    'product_id' => '4bfc6c57-98c0-424f-a72e-c1e2a1d49939', // Optional
+                    'surge_confirmation_id' => 'e100a670',                  // Optional
+                    'payment_method_id' => 'a1111c8c-c720-46c3-8534-2fcd'   // Optional
+                ));
+                $dados = [produtos => $ride];
+            }*/
             //var_dump($dados);
             return $this->renderer->render($response, 'uber.phtml', $dados);
         }
