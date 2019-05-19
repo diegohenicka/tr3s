@@ -32,6 +32,11 @@ return function (App $app) {
         return $this->renderer->render($response, 'home.phtml', $args);
     })->add($auth);
 
+    $app->get('/final', function (Request $request, Response $response, array $args) {
+        return $this->renderer->render($response, 'final.phtml', $args);
+    })->add($auth);
+
+
     $app->get('/localizacao', function (Request $request, Response $response, array $args) {
         return $this->renderer->render($response, 'localizacao.phtml', $args);
     })->add($auth);
@@ -104,17 +109,17 @@ return function (App $app) {
                 $dados = [produtos => $estimates];
             }
             if ($_SESSION['tipo'] == 'ride'){
-                /*$ride = $client->requestRide(array(
+                $ride = $client->requestRide(array(
                     'start_latitude' => '41.85582993',
                     'start_longitude' => '-87.62730337',
                     'end_latitude' => '41.87499492',
                     'end_longitude' => '-87.67126465',
-                    'product_id' => '4bfc6c57-98c0-424f-a72e-c1e2a1d49939', // Optional
-                    'surge_confirmation_id' => 'e100a670',                  // Optional
-                    'payment_method_id' => 'a1111c8c-c720-46c3-8534-2fcd'   // Optional
+                    //'product_id' => '4bfc6c57-98c0-424f-a72e-c1e2a1d49939', // Optional
+                    //'surge_confirmation_id' => 'e100a670',                  // Optional
+                    //'payment_method_id' => 'a1111c8c-c720-46c3-8534-2fcd'   // Optional
                 ));
-                $dados = [produtos => $ride];*/
-                var_dump("teste");
+                $dados = [produtos => $ride];
+                var_dump($dados);
             }
             //var_dump($dados);
             $_SESSION['tipo'] = "";
@@ -208,7 +213,7 @@ return function (App $app) {
 
             if ($user->count()) {
               $_SESSION['user'] = (array)$user->first();
-              return $response->withStatus(302)->withHeader('Location', '/home');
+              return $response->withStatus(302)->withHeader('Location', '/selectModal');
             }
           }
 
