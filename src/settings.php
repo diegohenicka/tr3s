@@ -22,7 +22,7 @@ return [
             'host' => 'localhost',
             'database' => 'mesepare_teste',
             'username' => 'root',
-            'password' => 'senha123',
+            'password' => 'root',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => ''
