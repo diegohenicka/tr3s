@@ -21,13 +21,17 @@ return function (App $app) {
         $data = [
             'user'=>filter_input(INPUT_POST, 'user'),
             'email'=>filter_input(INPUT_POST, 'email'),
-            'age'=>filter_input(INPUT_POST, 'age'),
+            'name'=>filter_input(INPUT_POST, 'nome'),
             'pass'=>filter_input(INPUT_POST, 'pass'),
             'gender'=>filter_input(INPUT_POST, 'gender')
-          ];
+          ];        
         //var_dump($data);
         $table = $this->db->table('user');
-        $user = $table->insert($data);
+        try{
+            $user = $table->insert($data);
+        }catch(Expection $e){
+            var_dump($e);
+        }
         return $response->withStatus(302)->withHeader('Location', '/');
         //return $this->renderer->render($response, 'index.phtml', $args);
     });

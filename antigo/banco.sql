@@ -82,7 +82,7 @@ CREATE TABLE `mesepare_teste`.`user` (
   `state` text,
   `city` text,
   `descr` text,
-  `age` int(3) NOT NULL,
+  `age` int(3),
   `contact` text,
   `status` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -92,6 +92,10 @@ ALTER TABLE `mesepare_teste`.`user`
 
 ALTER TABLE `mesepare_teste`.`user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
+
+/*Alterações para novas implementações*/
+ALTER TABLE `mesepare_teste`.`user`
+  ADD `name` text;
 
 
 
@@ -126,3 +130,12 @@ ALTER TABLE `mesepare_teste`.`wallet`
 ALTER TABLE `mesepare_teste`.`wallet`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
 COMMIT;
+
+
+
+
+
+
+
+
+

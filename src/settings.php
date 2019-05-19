@@ -19,7 +19,7 @@ return [
         //MySql
         'db' => [
             'driver' => 'mysql',
-            'hotst' => 'localhost',
+            'host' => 'localhost',
             'database' => 'mesepare_teste',
             'username' => 'root',
             'password' => 'root',
