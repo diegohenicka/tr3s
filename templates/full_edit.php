@@ -1,6 +1,6 @@
-<?php //require_once('api/db.php'); ?>
-<?php //require_once('api/login_check.php'); ?>
-<?php //require_once('api/api.php'); ?>
+<?php require_once('api/db.php'); ?>
+<?php require_once('api/login_check.php'); ?>
+<?php require_once('api/api.php'); ?>
 <?php
 	date_default_timezone_set('America/Sao_Paulo');
 
