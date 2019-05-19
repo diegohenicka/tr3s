@@ -20,6 +20,12 @@ return function (App $app) {
         return $logger;
     };
 
+    // Register provider
+    $container['flash'] = function () {
+        return new \Slim\Flash\Messages();
+    };
+
+
     //MySQL
     $container['db'] = function($c){
         $settings = $c->get('settings')['db'];

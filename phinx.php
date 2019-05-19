@@ -8,7 +8,8 @@ $app = new \Slim\App($settings);
 
 require __DIR__ . '/src/dependencies.php';
 
-$pdo = $container['db']->getPdo();
+//$pdo = $container['db']->getPdo();
+$pdo = $app->getDatabase()->getPdo();
 return [
     'paths' => [
         'migrations' => __DIR__.'/src/db/migrations'
