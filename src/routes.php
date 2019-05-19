@@ -98,6 +98,14 @@ return function (App $app) {
     })->add($auth);
 
 
+    $app->get('/edit_profile', function (Request $request, Response $response, array $args) {
+        return $this->renderer->render($response, 'edit_profile.phtml', $args);
+    });
+
+    $app->post('/edit', function (Request $request, Response $response, array $args) {
+
+    });
+
     $app->post('/cadastro', function (Request $request, Response $response, array $args) {
         $data = [
             'user'=>filter_input(INPUT_POST, 'user'),
