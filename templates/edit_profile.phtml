@@ -22,11 +22,13 @@
 <body>
 <?php include 'menulat.phtml'; ?>
 <?php include 'header.phtml'; ?>
+
+<?php var_dump($_SESSION['user']); ?>
     <div id="newdate-slider">
         <div class="newdate__slide first__step">
             <div class="slide__content">
             <h3 class="newdate__title">Finalize seu cadastro :)</h3>
-            <form action="edit/" id="" class=""  method="post" enctype="multipart/form-data">
+            <form action="edit" id="" class=""  method="post" enctype="multipart/form-data">
                 <div class="newdate__place__select">
                     <select class="newdate__select" name="state" id="estados">
     

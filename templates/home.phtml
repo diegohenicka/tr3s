@@ -36,43 +36,20 @@
 <div class="profile__content">
     <div class="profile__data">
         <div class="profile__cover__mobile">
-
             <div class="profile__photo">
-                <img src="./photos/<?php echo $myavatar; ?>" alt="">
+                <?php if (!empty($_SESSION['userAlbum'])) { ;?>
+                        <img src="photos/<?php echo $_SESSION['userAlbum']['name']; ?>" alt="">
+                <?php }?>
             </div>
         </div>
-    </div>
-<!--    <form action="add/add_photos.php" id="" class=""  method="post" enctype="multipart/form-data" onchange="submitForm();">-->
-<!--        <div class="profile__images">-->
-<!--            --><?php //if (!empty($useralbum['name'])) { ?>
-<!--                --><?php //do { ?>
-<!--                    <img class="profile__image__item" src="./photos/album/--><?php //echo $useralbum['name']; ?><!--" alt="">-->
-<!--                --><?php //} while($useralbum = $result3->fetch_assoc()); ?>
-<!--            --><?php //}?>
-<!--            <input style="display: none;" type="file" name="fileToUpload" id="fileToUpload">-->
-<!--            <input style="display: none;" class="" type="submit" value="Enviar" name="submit" id="submit_button_id">-->
-<!--            <label class="add_file" for="fileToUpload">-->
-<!--                <img class="" src="./img/plus.png" alt="">-->
-<!--                Adicionar fotos-->
-<!--            </label>-->
-<!--        </div>-->
-<!--        <script type="text/javascript">-->
-<!--            function submitForm() {-->
-<!--                // However you need to submit the form-->
-<!---->
-<!--                document.getElementById("submit_button_id").click(); // Or whatever-->
-<!--            }-->
-<!--        </script>-->
-<!--    </form>-->
-    <div class="profile__text__mobile">
-        <?php echo $userdescr; ?>
-    </div>
 </div>
-<div id="searchdate">
-    <a href="newdate.php"><img src="img/new_.png" alt=""></a>
+<div style="margin-bottom: 50%;padding: 9%;">
+    <h1 class="" style="color: #429DC4;">
+        Somos uma plataforma de conexão para as mulheres que vão para o mesmo local que você. Assim, incentivando a sororidade e facilitamos a mobilidade entre nós!
+    </h1>
 </div>
 <div id="newdate">
-    <a href="finddate.php"><img src="img/search_.png" alt=""></a>
+    <a href="selectModal"><img src="img/search_.png" alt=""></a>
 </div>
 
 <script src="profile.js"></script>
