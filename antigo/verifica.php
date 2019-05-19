@@ -1,6 +1,8 @@
+<?php require_once('api/db.php'); ?>
 <?php
 //MySQLi connection
-$con = mysqli_connect("localhost","mesepare_teste","lacerquita1909","mesepare_teste");
+//$con = mysqli_connect("localhost","mesepare_teste","lacerquita1909","mesepare_teste");
+$con = $conn;
 
 // Check connection for any errors
 if (mysqli_connect_errno()){
