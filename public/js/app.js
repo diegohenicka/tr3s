@@ -35,13 +35,13 @@ $(document).ready(function(){
     });
 
 
-    $('#man').on("click", function() {
-        $('#man').addClass('active');
-        $('#woman').removeClass('active');
+    $('#cis').on("click", function() {                
+        $('#cis').addClass('active');
+        $('#trans').removeClass('active');
     })
-    $('#woman').on("click", function() {
-        $('#woman').addClass('active');
-        $('#man').removeClass('active');
+    $('#trans').on("click", function() {
+        $('#trans').addClass('active');
+        $('#cis').removeClass('active');
     })
 
     $('#login').on("click", function() {

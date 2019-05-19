@@ -12,14 +12,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,900" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125397853-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-125397853-1');
-    gtag('config', 'AW-789167338');
-    </script>
 <!-- Google Tag Manager -->
     <!-- JIVOSITE CODE -->
     <script type='text/javascript'>
@@ -44,9 +36,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="modal__subtitle">
                 Ao clicar em entrar você concorda com os Termos. <br> Política de Privacidade e Política de Cookies
             </div>
-            <form method="POST" action="verifica.php" class="modal__form">
-                <input name="username" type="text" placeholder="Usuário" class="modal__input">
-                <input name="password" type="password" placeholder="Senha" class="modal__input">
+            <form method="POST" action="login" class="modal__form">
+                <input name="user" type="text" placeholder="Usuário" class="modal__input">
+                <input name="pass" type="password" placeholder="Senha" class="modal__input">
                 <input class="modal__submit" type="submit" value="Entrar">
             </form>
         </div>
@@ -90,9 +82,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 Ao clicar em entrar você concorda com os Termos. <br> Política de Privacidade e Política de Cookies
             </div>
             <form action="cadastro" id="cadastro-form" class="modal__form">
+                
+                <input name="nome" type="text" placeholder="Nome Completo" class="modal__input">    
                 <input name="user" type="text" placeholder="Usuário" class="modal__input">
-                <input name="email" type="email" placeholder="Email" class="modal__input">
-                <input name="age" type="number" placeholder="Idade" class="modal__input">
+                <input name="email" type="email" placeholder="Email" class="modal__input">    
 
                 <input name="pass" type="password" placeholder="Senha" class="modal__input">
 
@@ -100,17 +93,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span class="gender__title">
                         Sou:
                     </span>
-                    <div id="woman" class="gender">
+                    <div id="cis" class="gender">
                         <img src="img/woman.png"  height="80" width="80" alt="">
                         <span class="gender__label">
-                            Mulher
+                            Mulher Cis
                         </span>
                     </div>
 
-                    <div id="man" class="gender">
+                    <div id="trans" class="gender">
                         <img src="img/man.png" height="80" width="80" alt="">
                         <span class="gender__label">
-                            Homem
+                            Mulher Trans
                         </span>
                     </div>
                 </div>
