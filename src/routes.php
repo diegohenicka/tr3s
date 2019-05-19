@@ -98,6 +98,10 @@ return function (App $app) {
     })->add($auth);
 
 
+    $app->get('/selectModal', function (Request $request, Response $response, array $args) {
+        return $this->renderer->render($response, 'finddate.php', $args);
+    });
+
     $app->get('/edit_profile', function (Request $request, Response $response, array $args) {
         return $this->renderer->render($response, 'edit_profile.phtml', $args);
     });
