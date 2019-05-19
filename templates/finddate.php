@@ -111,7 +111,7 @@
             </div>
         </div>
     </div>
-    <script src="./jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
 $(document).ready(function () {
@@ -151,8 +151,8 @@ $(document).ready(function () {
 });
     </script>
 
-    <script src="finddate.js"></script>
-    <script src="sidemenu/sidemenu.js"></script>
-    <script src="select.js"></script>
+    <script src="js/finddate.js"></script>
+    <script src="js/sidemenu/sidemenu.js"></script>
+    <script src="js/select.js"></script>
 </body>
 </html>
